@@ -164,9 +164,143 @@ const SaleWrapper = styled.section`
   }
 
   .image__wrapper {
-    .item__wrapper {
+    .items__wrapper {
+      display: flex;
+      flex-direction: row;
+      width: calc(100vw * 0.8);
+      overflow-x: scroll;
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+      --tw-scroll-snap-strictness: mandatory;
+
+      .item__wrapper {
+        scroll-snap-align: center;
+
+        img {
+          width: calc(100vw * 0.8);
+          height: 30vh;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+
+          h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+          }
+
+          p {
+            font-size: 0.8rem;
+            opacity: 0.75;
+            margin: 0;
+          }
+
+          h5 {
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+`;
+
+const ExpertiseWrapper = styled.section`
+  div {
+    div {
+      .text__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .available__wrapper {
+          display: flex;
+          font-size: 1rem;
+          align-items: center;
+          gap: 1rem;
+          font-weight: 500;
+
+          ::before {
+            content: "";
+            display: block;
+            width: 5rem;
+            height: 2px;
+            background-color: black;
+          }
+        }
+
+        h3 {
+          font-size: 2.25rem;
+          text-align: right;
+          font-weight: 500;
+          margin: 0;
+
+          transform: translateY(-2rem);
+        }
+      }
+
       img {
         width: 100%;
+        height: 12.5rem;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .text__under__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        p {
+          font-size: 0.75rem;
+          opacity: 0.75;
+        }
+
+        .info__wrapper {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          justify-content: space-between;
+
+          .beds__wrapper, .bath__wrapper, .finished__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            p {
+              margin: 0;
+            }
+
+            h5 {
+              margin: 0;
+              font-size: 0.75rem;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .description__wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          a {
+            display: flex;
+            align-items: end;
+            gap: 0.75rem;
+            font-weight: 500;
+
+            span {
+              svg {
+                width: 1rem;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -208,7 +342,7 @@ const Home: NextPage = () => {
                     </div>
                 </div>
                 <img
-                    src="https://static.dezeen.com/uploads/2020/01/semi-semi-house-peter-mcneil-clarissa-nam-comn-architects-toronto-canada_dezeen_hero-a-1704x959.jpg"
+                    src="https://media.graphassets.com/eHvDfRCTNmq8drMcoxsV"
                     alt="header image of luxary house"/>
                 <div className="featured__wrapper">
                     <p>Featured in</p>
@@ -256,11 +390,85 @@ const Home: NextPage = () => {
                     </div>
                 </div>
                 <div className="image__wrapper">
-                    <div className="item__wrapper">
-                        <img src="https://media.graphassets.com/lTTrMBT3TaOyDmocg3z8" alt=""/>
+                    <div className="items__wrapper">
+                        <div className="item__wrapper">
+                            <img src="https://media.graphassets.com/lTTrMBT3TaOyDmocg3z8" alt=""/>
+                            <div>
+                                <h4>Summerhill</h4>
+                                <p>218 South 200 East Salt Lake City, Utah 84111</p>
+                                <h5>Townhouse</h5>
+                            </div>
+                        </div>
+                        <div className="item__wrapper">
+                            <img src="https://media.graphassets.com/ImAKh4ppRZKfBdjOaESX" alt=""/>
+                            <div>
+                                <h4>HCD House</h4>
+                                <p>464 Jordan Parkway, South Jordan, Utah 84095</p>
+                                <h5>Mordern house</h5>
+                            </div>
+                        </div>
+                        <div className="item__wrapper">
+                            <img src="https://media.graphassets.com/eHvDfRCTNmq8drMcoxsV" alt=""/>
+                            <div>
+                                <h4>Semislat House</h4>
+                                <p>66 South 600 West Salt Lake City, Utah 84101</p>
+                                <h5>Modern House</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <hr style={{margin: "2.5rem 0"}}/>
             </SaleWrapper>
+            <ExpertiseWrapper>
+                <div>
+                    <div>
+                        <div className="text__wrapper">
+                            <div className="available__wrapper">
+                                Available now
+                            </div>
+                            <h3>Hive <br/> Rose House</h3>
+                        </div>
+                        <img
+                            src="https://media.graphassets.com/we5qGJ87TUewVRniaGxd"
+                            alt=""/>
+                        <div className="text__under__wrapper">
+                            <p>666 Noth 400 West Centerville, Utah 84014</p>
+                            <div className="info__wrapper">
+                                <div className="beds__wrapper">
+                                    <p>beds</p>
+                                    <h5>1 - 4</h5>
+                                </div>
+                                <div className="bath__wrapper">
+                                    <p>bath</p>
+                                    <h5>1.4 - 3.4</h5>
+                                </div>
+                                <div className="finished__wrapper">
+                                    <p>finished sq sf</p>
+                                    <h5>924 - 1620</h5>
+                                </div>
+                            </div>
+                            <div className="description__wrapper">
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Modern architecture in well - established neighborhood offer homeowners a chance to
+                                    have the best of both suburban and urban worlds.
+                                </p>
+                                <a href="#">
+                                    See home
+                                    <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
+                                         className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                              d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/>
+                                    </svg>
+                                </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ExpertiseWrapper>
         </Layout>
     )
 }
