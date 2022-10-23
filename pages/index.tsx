@@ -311,7 +311,7 @@ const Home: NextPage = () => {
         <Layout>
             <HeaderWrapper>
                 <div>
-                    <h1>Discover a place you'll love to live</h1>
+                    <h1>Discover a place you&apos;ll love to live</h1>
                     <div>
                         <p>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
