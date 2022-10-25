@@ -4,10 +4,21 @@ import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
   div {
+    @media (min-width: 768px) {
+
+    }
+
     h1 {
       font-size: 2.5rem;
       font-weight: 500;
       margin: 0 0 1.25rem 0;
+
+      @media (min-width: 640px) {
+        font-size: 3rem;
+      }
+
+      @media (min-width: 768px) {
+      }
     }
 
     div {
@@ -15,10 +26,20 @@ const HeaderWrapper = styled.header`
       flex-direction: column;
       gap: 2rem;
 
+      @media (min-width: 768px) {
+      }
+
       p {
         margin: 0;
         font-size: 0.75rem;
         opacity: 0.5;
+
+        @media (min-width: 640px) {
+          font-size: 1rem;
+        }
+
+        @media (min-width: 768px) {
+        }
       }
 
       div {
@@ -29,8 +50,10 @@ const HeaderWrapper = styled.header`
           gap: 1rem;
 
           div {
+            width: 100%;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
 
             .city__wrapper, .type__wrapper {
               display: flex;
@@ -58,7 +81,7 @@ const HeaderWrapper = styled.header`
                 background-size: 15px;
                 margin-right: 2rem;
                 padding: 0.5rem 0;
-                width: 100px;
+                width: 90%;
                 color: black;
 
                 :focus {
@@ -79,6 +102,10 @@ const HeaderWrapper = styled.header`
             gap: 0.5rem;
             font-size: 0.75rem;
             font-weight: 400;
+            color: white;
+
+            @media (min-width: 768px) {
+            }
           }
         }
       }
@@ -103,21 +130,28 @@ const HeaderWrapper = styled.header`
     .logo__wrapper {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      gap: 1rem;
       justify-items: center;
       margin: 1rem 0;
       align-items: center;
 
+      @media (min-width: 640px) {
+        gap: 1.5rem;
+      }
+
       .company__logo {
         opacity: 0.5;
-        height: 1.5rem;
+        max-height: 1.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
 
         img {
-          height: fit-content;
-          object-fit: fill;
+          width: 75px;
+
+          @media (min-width: 640px) {
+            width: 100px;
+          }
         }
       }
     }
@@ -133,6 +167,9 @@ const SaleWrapper = styled.section`
       font-size: 2.25rem;
       font-weight: 500;
       margin: 0 0 1.25rem 0;
+      @media (min-width: 640px) {
+        font-size: 2.5rem;
+      }
     }
 
     div {
@@ -172,6 +209,10 @@ const SaleWrapper = styled.section`
       scroll-snap-type: x var(--tw-scroll-snap-strictness);
       --tw-scroll-snap-strictness: mandatory;
 
+      @media (min-width: 640px) {
+        width: calc(100vw * 0.75);
+      }
+
       .item__wrapper {
         scroll-snap-align: center;
 
@@ -180,6 +221,10 @@ const SaleWrapper = styled.section`
           height: 30vh;
           object-fit: cover;
           object-position: center;
+
+          @media (min-width: 640px) {
+            width: calc(100vw * 0.75);
+          }
         }
 
         div {
@@ -227,7 +272,7 @@ const ExpertiseWrapper = styled.section`
           ::before {
             content: "";
             display: block;
-            width: 5rem;
+            width: 25vw;
             height: 2px;
             background-color: black;
           }
@@ -299,6 +344,145 @@ const ExpertiseWrapper = styled.section`
                 width: 1rem;
               }
             }
+          }
+        }
+      }
+
+      .divider__wrapper {
+        margin: 2rem 0;
+        //display: flex;
+        //flex-direction: row;
+
+        h3 {
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: 400;
+
+          //text-align: center;
+
+          //::before {
+          //  content: "";
+          //  display: flex;
+          //  width: 7.5rem;
+          //  transform: translateY(1.25rem);
+          //  height: 2px;
+          //  background-color: black;
+          //}
+          //
+          //::after {
+          //  content: "";
+          //  display: flex;
+          //  align-self: end;
+          //  width: 7.5rem;
+          //  transform: translateY(-0.25rem) translateX(-2rem);
+          //  height: 2px;
+          //  background-color: black;
+          //}
+        }
+
+        //figure {
+        //  width: 50px;
+        //  height: 2px;
+        //  background-color: black;
+        //  position: absolute;
+        //}
+        //
+        //figure:nth-child(1) {
+        //  transform: translateX(-2.5rem) translateY(0.75rem);
+        //}
+        //
+        //figure:nth-child(3) {
+        //  transform: translateX(calc(100vw * 0.55)) translateY(-1.5rem);
+        //}
+      }
+
+      .expertise__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        h3 {
+          font-size: 2rem;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        .text__wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          img {
+            width: 100%;
+            height: 12.5rem;
+            object-fit: cover;
+            object-position: center;
+          }
+
+          p {
+            font-size: 0.75rem;
+            opacity: 0.75;
+          }
+
+          a {
+            display: flex;
+            align-items: end;
+            gap: 0.75rem;
+            font-weight: 500;
+
+            span {
+              svg {
+                width: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const ArticleWrapper = styled.section`
+
+  div {
+    .article__header {
+      font-size: 2.25rem;
+      font-weight: 500;
+      margin-top: 2rem;
+      padding-bottom: 2rem;
+      text-align: center;
+      border-bottom: 2px rgba(0, 0, 0, 0.1) solid;
+    }
+
+    div {
+      width: 100%;
+      overflow-x: scroll;
+      margin-top: -1.75rem;
+
+      .article__wrapper {
+        border-bottom: 2px rgba(0, 0, 0, 0.1) solid;
+        margin: 0;
+        padding-bottom: 1rem;
+        display: flex;
+        padding-top: 1rem;
+
+        .article__title {
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin: 0;
+          height: 100%;
+          width: -moz-fit-content;
+          width: fit-content;
+          line-break: anywhere;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-transform: capitalize;
+          display: flex;
+          flex-direction: column;
+
+          .article__date {
+            font-size: 0.5rem;
           }
         }
       }
@@ -466,9 +650,71 @@ const Home: NextPage = () => {
                                 </a>
                             </div>
                         </div>
+                        {/*<div className="divider__wrapper">*/}
+                        {/*    /!*<figure></figure>*!/*/}
+                        {/*    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/}
+                        {/*        We only feature the top performing*/}
+                        {/*        homes and verified manufacturers.</h3>*/}
+                        {/*    /!*<figure></figure>*!/*/}
+                        {/*</div>*/}
+                        <hr style={{margin: "2.5rem 0"}}/>
+                        <div className="expertise__wrapper">
+                            <h3>Expertise and
+                                passion, on measure</h3>
+                            <div className="text__wrapper">
+                                <img
+                                    src="https://media.graphassets.com/0Jpx2LGDRUCCjyDi91z8"
+                                    alt=""/>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For more than 9 years, We have been a
+                                    Utah real estate agency renowned for the quality of its catalog of objects, its
+                                    expertise in setting selling prices and for the precision of its tailor - made
+                                    support. Pilot of 22 new projects, our passion for the profession is reflected in
+                                    each of our actions.</p>
+                                <a href="#">
+                                    Our history
+                                    <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
+                                         className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                              d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/>
+                                    </svg>
+                                </span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </ExpertiseWrapper>
+            <ArticleWrapper>
+                <div>
+                    <h2 className="article__header">Articles</h2>
+                    <div>
+                        <div className="article__wrapper">
+                            <h2 className="article__title">
+                                <span className="article__date">July 05, 2022</span> bathroom trends you&#39;ll
+                                want to
+                                incorporate into your bathroom redesign
+                            </h2>
+                        </div>
+                        <div className="article__wrapper">
+                            <h2 className="article__title">
+                                <span className="article__date">August 22, 2022</span> ways to tell if your kitchen
+                                needs
+                                a
+                                renovation.
+                            </h2>
+                        </div>
+                        <div className="article__wrapper">
+                            <h2 className="article__title">
+                                <span className="article__date">October 11, 2022</span> 5 Exterior Cladding Options To
+                                Bring
+                                Instant Curb Appeal
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </ArticleWrapper>
         </Layout>
     )
 }

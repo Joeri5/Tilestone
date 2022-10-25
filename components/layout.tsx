@@ -15,6 +15,10 @@ const ChildrenWrapper = styled.div`
   max-width: 80%;
   margin: 6rem auto;
 
+  @media (min-width: 640px) {
+    max-width: 75%;
+  }
+
   @media (min-width: 1024px) {
     filter: blur(0px) !important;
     margin: 8.5rem auto;
