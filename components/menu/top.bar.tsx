@@ -5,6 +5,7 @@ import {MenuItems} from "../../data/menu";
 import {Cross as Hamburger} from 'hamburger-react'
 import {useMenu} from "../../context/menuContext";
 import {useRouter} from "next/router";
+import {useAuth} from "../../context/authContext";
 
 const Top = styled.div`
   position: fixed;
@@ -157,7 +158,10 @@ const SignupButton = styled.div`
 
 const TopBar = () => {
     const {isOpen, setIsOpen} = useMenu();
+    const {isRegister, setIsRegister} = useAuth();
     const router = useRouter();
+
+    console.log(isRegister);
 
     const toggleMenu = () => {
         if (isOpen) {
@@ -174,7 +178,7 @@ const TopBar = () => {
 
     const MenuLink = ({title, url}: menuLinkProps) => {
         return (
-            <MenuLinkWrapper>
+            <MenuLinkWrapper onClick={title === 'Sign Up' ? () => setIsRegister(true) : () => setIsRegister(false)}>
                 <Link href={url}>
                     <a onClick={() => setIsOpen(false)}>{title}</a>
                 </Link>
@@ -184,7 +188,8 @@ const TopBar = () => {
 
     const MenuLinkActive = ({title, url}: menuLinkProps) => {
         return (
-            <MenuLinkActiveWrapper>
+            <MenuLinkActiveWrapper
+                onClick={title === 'Sign Up' ? () => setIsRegister(true) : () => setIsRegister(false)}>
                 <Link href={url}>
                     <a onClick={() => setIsOpen(false)}>{title}</a>
                 </Link>
@@ -209,9 +214,9 @@ const TopBar = () => {
                                 <MenuLink title={item.label} url={item.path}/>
                             </>
                         ))}
-                        <MenuLink title={"Log In"} url={"/login"}/>
+                        <MenuLink title={"Log In"} url={"/auth"}/>
                         <SignupButton>
-                            <MenuLink title={"Sign Up"} url={"/signup"}/>
+                            <MenuLink title={"Sign Up"} url={"/auth"}/>
                         </SignupButton>
                     </LinkWrapper>
                 </EndWrapper>
@@ -234,10 +239,10 @@ const TopBar = () => {
                     ))}
                     <hr/>
                     <UserMenuItemsWrapper>
-                        {router.pathname === "/signup" ? <MenuLinkActive title="Sign Up" url="/signup"/> :
-                            <MenuLink title="Sign Up" url="/signup"/>}
-                        {router.pathname === "/login" ? <MenuLinkActive title="Log In" url="/login"/> :
-                            <MenuLink title="Log In" url="/login"/>}
+                        {router.pathname === "/auth" && isRegister ? <MenuLinkActive title="Sign Up" url="/signup"/> :
+                            <MenuLink title="Sign Up" url="/auth"/>}
+                        {router.pathname === "/auth" && !isRegister ? <MenuLinkActive title="Log In" url="/login"/> :
+                            <MenuLink title="Log In" url="/auth"/>}
                     </UserMenuItemsWrapper>
                 </MobileMenuContent>
             </MobileMenuWrapper>

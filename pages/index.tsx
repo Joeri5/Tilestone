@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
   div {
-    @media (min-width: 768px) {
-
+    @media (min-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
     }
 
     h1 {
@@ -19,6 +20,12 @@ const HeaderWrapper = styled.header`
 
       @media (min-width: 768px) {
       }
+
+      @media (min-width: 1024px) {
+        font-size: 4rem;
+        max-width: 50%;
+
+      }
     }
 
     div {
@@ -27,6 +34,10 @@ const HeaderWrapper = styled.header`
       gap: 2rem;
 
       @media (min-width: 768px) {
+      }
+
+      @media (min-width: 1024px) {
+        justify-content: center;
       }
 
       p {
@@ -118,9 +129,19 @@ const HeaderWrapper = styled.header`
     object-fit: cover;
     object-position: center;
     margin: 2rem 0;
+
+    @media (min-width: 1024px) {
+      height: 60vh;
+    }
   }
 
   .featured__wrapper {
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     p {
       font-size: 0.75rem;
       opacity: 0.5;
@@ -134,6 +155,12 @@ const HeaderWrapper = styled.header`
       justify-items: center;
       margin: 1rem 0;
       align-items: center;
+
+      @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
 
       @media (min-width: 640px) {
         gap: 1.5rem;
@@ -163,6 +190,11 @@ const SaleWrapper = styled.section`
   div {
     margin-bottom: 1rem;
 
+    @media (min-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
     h3 {
       font-size: 2.25rem;
       font-weight: 500;
@@ -177,13 +209,25 @@ const SaleWrapper = styled.section`
       flex-direction: column;
       gap: 2rem;
 
+      @media (min-width: 1024px) {
+        align-items: end;
+      }
+
       p {
         margin: 0;
         font-size: 0.75rem;
         opacity: 0.5;
+
+        @media (min-width: 1024px) {
+          max-width: 40%;
+        }
       }
 
       div {
+        @media (min-width: 1024px) {
+          //transform: translateX(-15rem);
+        }
+
         a {
           display: flex;
           align-items: end;
@@ -201,6 +245,11 @@ const SaleWrapper = styled.section`
   }
 
   .image__wrapper {
+    @media (min-width: 1024px) {
+      display: flex;
+      width: 100%;
+    }
+
     .items__wrapper {
       display: flex;
       flex-direction: row;
@@ -211,6 +260,10 @@ const SaleWrapper = styled.section`
 
       @media (min-width: 640px) {
         width: calc(100vw * 0.75);
+      }
+
+      @media (min-width: 1024px) {
+        align-items: center;
       }
 
       .item__wrapper {
@@ -225,12 +278,22 @@ const SaleWrapper = styled.section`
           @media (min-width: 640px) {
             width: calc(100vw * 0.75);
           }
+
+          @media (min-width: 1024px) {
+            width: 20vw;
+            height: 40vh;
+          }
         }
 
         div {
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
+
+          @media (min-width: 1024px) {
+            align-items: start;
+            width: 100%;
+          }
 
           h4 {
             font-size: 1.25rem;
@@ -257,7 +320,9 @@ const SaleWrapper = styled.section`
 
 const ExpertiseWrapper = styled.section`
   div {
+
     div {
+
       .text__wrapper {
         display: flex;
         flex-direction: column;
@@ -293,6 +358,10 @@ const ExpertiseWrapper = styled.section`
         height: 12.5rem;
         object-fit: cover;
         object-position: center;
+
+        @media (min-width: 1024px) {
+          height: 50vh;
+        }
       }
 
       .text__under__wrapper {
@@ -417,6 +486,10 @@ const ExpertiseWrapper = styled.section`
             height: 12.5rem;
             object-fit: cover;
             object-position: center;
+
+            @media (min-width: 1024px) {
+              height: 50vh;
+            }
           }
 
           p {
